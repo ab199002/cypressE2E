@@ -1,0 +1,9 @@
+{
+    "firstName": "Test",
+    "LastName": "User",
+    "email":"a.b",
+    "emailDomain": "@yopmail.com",
+    "telephoneNumber": "9828000000",
+    "Password": "12345678",
+    "successMessage":"Your Account Has Been Created!"   
+}
