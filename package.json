@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:adtocart": "npx cypress run --spec cypress/e2e/tests/addToCartTest.cy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.6.1"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.7.0"
   }
 }
