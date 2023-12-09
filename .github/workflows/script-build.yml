@@ -13,6 +13,7 @@ jobs:
         with:
           command: npm run test:adtocart
       - name: Cypress Test Report
+        if: always()
         uses: actions/upload-artifact@v3
         with:
             name: Mocha Awesome Report
