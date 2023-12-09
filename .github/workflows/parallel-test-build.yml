@@ -1,4 +1,4 @@
-name: Sanity Test
+name: Parallel-Test
 on: push
 jobs:
   Add-To-Cart-run:
@@ -13,6 +13,12 @@ jobs:
         with:
           command: npm run test:adtocart
 
+      - name: Cypress Test Report
+        uses: actions/upload-artifact@v3
+        with:
+              name: Mocha Awesome Report - Add to Cart
+              path: cypress/reports/html
+
   Register-Test-run:
             runs-on: ubuntu-22.04
             steps:
@@ -24,3 +30,9 @@ jobs:
                 uses: cypress-io/github-action@v6
                 with:
                   command: npm run test:registertest
+
+              - name: Cypress Test Report
+                uses: actions/upload-artifact@v3
+                with:
+                      name: Mocha Awesome Report- Register Flow
+                      path: cypress/reports/html
