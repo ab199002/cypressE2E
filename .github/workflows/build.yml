@@ -8,5 +8,14 @@ jobs:
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Cypress ru
         uses: cypress-io/github-action@v6
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: 'Test Automation Report: https://github.com/ab199002/cypressE2E/actions/runs/${{github.run_id}}'
+          SLACK_TITLE: Cyptress Web Test 
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
