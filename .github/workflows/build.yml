@@ -11,6 +11,13 @@ jobs:
       - name: Cypress ru
         uses: cypress-io/github-action@v6
 
+      - name: Cypress Test Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+              name: Mocha Awesome Report- Register Flow
+              path: cypress/reports/html
+
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
